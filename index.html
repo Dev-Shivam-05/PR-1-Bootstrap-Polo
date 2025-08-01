@@ -13,41 +13,99 @@
     <style>
         html body 
         {
-            transition: all .5s ease;
-            overflow-x: hidden;
+            transition: all .5s ease !important;
+            overflow-x: hidden !important;
         }
         .divider {
-            height: 100px;
+            height: 100px !important;
         }
 
         .accordion-button {
-            outline: none;
+            outline: none !important;
+            box-shadow: none !important;
         }
         .code
         {
-            height: 700px;
-            background-image: url(./images/bg-business);
-            background-position: center;
-            background-size: cover;
-            background-attachment: fixed;
-            object-fit: cover;
-            display: flex;
-            align-items: center;
+            height: 700px !important;
+            background-image: url(./images/bg-business) !important;
+            background-position: center !important;
+            background-size: cover !important;
+            background-attachment: fixed !important;
+            object-fit: cover !important;
+            display: flex !important;
+            align-items: center !important;
         }
         .parallax {
-            background-image: url(./images/bg-parallax.png);
-            background-position: center;
-            background-size: cover;
-            background-attachment: fixed;
+            background-image: url(./images/bg-parallax.png) !important;
+            background-position: center !important;
+            background-size: cover !important;
+            background-attachment: fixed !important;
         }
-
-        .services .services-body .icon {
+        .services .services-header h2
+        {
+            position: relative;
+        }
+        .services .services-header h2::after
+        {
+            content: '' !important;
+            width: 70px !important;
+            height: 2px !important;
+            position: absolute !important;
+            top: 100% !important;
+            left: 50% !important;
+            transform: translate(-50%,10px) !important;
+            background-color: #3939e7 !important;
+        }
+        .services .services-body .icon,.services .services-body .icon .fa-solid  {
+            transition: all .3s ease !important;
+        }
+        .services .services-body .icon:hover .fa-solid {
+            padding: 1.5rem !important;
+            
+        }
+        .blog .blog-header h2
+        {
+            position: relative;
+        }
+        .blog .blog-header h2::after
+        {
+            content: '' !important;
+            width: 70px !important;
+            height: 2px !important;
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            transform: translate(0,10px);
+            background-color: #3939e7 !important;
+        }
+        .blog .blog-body button .fa-arrow-right
+        {
             transition: all .4s ease;
         }
-
-        .services .services-body .icon:hover .fa-solid {
-            padding: 1.5rem;
-            border: 5px solid #000000;
+        .blog .blog-body button:hover .fa-arrow-right
+        {
+            margin-left: 12px !important;
+        }
+        /* .team .team-body .card ul li a:hover .fa-brands
+        {
+            transform: rotate(30px);
+            width: 100px;
+        } */
+        .team .team-body .nav-item:hover
+        {
+            transition: all .4s ease;
+        }
+        .team .team-body .nav-item:hover
+        {
+            width: 150px !important;
+        }
+        footer ul li a
+        {
+            transition: all .4s ease !important;
+        }
+        footer ul li a:hover
+        {
+            color: #3939e7 !important;
         }
     </style>
 </head>
@@ -94,6 +152,12 @@
                             <a href="" class="nav-link text-uppercase">Shop</a>
                         </li>
                     </ul>
+                    <div class="icons d-none d-lg-block">
+                    <i class="fa-solid fa-magnifying-glass text-secondary float-lg-start mx-2"></i>
+                    <i class="fa-solid fa-earth-americas text-secondary position-relative float-lg-start mx-2">
+                        <span class="position-absolute start-0 start-100 text-secondary" style="font-size: 6px;">EN</span>
+                    </i>
+                </div>
                 </div>
                 
             </div>
@@ -374,7 +438,7 @@
             <div class="container">
                 <div class="services-header mb-5">
                     <h2 class="text-center fw-bold text-uppercase">services</h2>
-                    <p class="fw-light text-center">Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse
+                    <p class="fw-light text-center mt-4">Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse
                         condimentum porttitor cursumus.</p>
                 </div>
                 <div class="services-body">
@@ -543,63 +607,65 @@
             <div class="container">
                 <div class="blog-header">
                     <h2 class="fw-bold text-uppercase">our blog</h2>
-                    <p class="text-secondary">The most happiest time of the day!. Morbi sagittis, sem quis lacinia
+                    <p class="text-secondary mt-4">The most happiest time of the day!. Morbi sagittis, sem quis lacinia
                         faucibus, orci ipsum gravida tortor, vel interdum mi sapien ut justo. Nulla varius consequat
                         magna, id molestie ipsum volutpat quis. A true story, that never been told!. Fusce id mi diam,
                         non ornare orci. Pellentesque ipsum erat, facilisis ut venenatis eu, sodales vel dolor.</p>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-12 col-12 col-lg-4">
-                        <div class="card mb-4">
-                            <div class="card-header p-0 position-relative">
-                                <img src="./images/blog-1.png" alt="blog-1" class="img-fluid d-block w-100">
-                                <span class="btn btn-primary position-absolute top-0 end-0 mt-3 me-3 ">Lifestyle</span>
-                            </div>
-                            <div class="card-body p-4">
-                                <p class="card-subtitle text-secondary " style="font-size: 12px;">Jan 21,2017 <span
-                                        class="ms-3">33 Comments</span></p>
-                                <h4 class="card-title my-3">Standard post with a single image</h4>
-                                <p class="text-secondary">Curabitur pulvinar euismod ante, ac sagittis ante posuere ac.
-                                    Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra
-                                    laoreet.</p>
-                                <button type="button" class="bg-transparent border-0 text-uppercase">read more <i
-                                        class="fa-solid fa-arrow-right ms-1"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-12 col-12 col-lg-4">
-                        <div class="card mb-4">
-                            <div class="card-header p-0 position-relative">
-                                <img src="./images/blog-2.png" alt="blog-1" class="img-fluid d-block w-100">
-                                <span class="btn btn-primary position-absolute top-0 end-0 mt-3 me-3 ">Science</span>
-                            </div>
-                            <div class="card-body p-4">
-                                <p class="card-subtitle text-secondary " style="font-size: 12px;">Jan 21,2017 <span
-                                        class="ms-3">33 Comments</span></p>
-                                <h4 class="card-title my-3">Standard post with a single image</h4>
-                                <p class="text-secondary">Curabitur pulvinar euismod ante, ac sagittis ante posuere ac.
-                                    Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra
-                                    laoreet.</p>
-                                <button type="button" class="bg-transparent border-0 text-uppercase">read more <i
-                                        class="fa-solid fa-arrow-right ms-1"></i></button>
+                <div class="blog-body">
+                    <div class="row">
+                        <div class="col-12 col-12 col-12 col-lg-4">
+                            <div class="card mb-4">
+                                <div class="card-header p-0 position-relative">
+                                    <img src="./images/blog-1.png" alt="blog-1" class="img-fluid d-block w-100">
+                                    <span class="btn btn-primary position-absolute top-0 end-0 mt-3 me-3 ">Lifestyle</span>
+                                </div>
+                                <div class="card-body p-4">
+                                    <p class="card-subtitle text-secondary " style="font-size: 12px;">Jan 21,2017 <span
+                                            class="ms-3">33 Comments</span></p>
+                                    <h4 class="card-title my-3">Standard post with a single image</h4>
+                                    <p class="text-secondary">Curabitur pulvinar euismod ante, ac sagittis ante posuere ac.
+                                        Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra
+                                        laoreet.</p>
+                                    <button type="button" class="bg-transparent border-0 text-uppercase">read more <i
+                                            class="fa-solid fa-arrow-right ms-1"></i></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-12 col-12 col-lg-4">
-                        <div class="card mb-4">
-                            <div class="card-header p-0 position-relative">
-                                <img src="./images/blog-3.png" alt="blog-3" class="img-fluid d-block w-100">
-                                <span class="btn btn-primary position-absolute top-0 end-0 mt-3 me-3 ">Science</span>
+                        <div class="col-12 col-12 col-12 col-lg-4">
+                            <div class="card mb-4">
+                                <div class="card-header p-0 position-relative">
+                                    <img src="./images/blog-2.png" alt="blog-1" class="img-fluid d-block w-100">
+                                    <span class="btn btn-primary position-absolute top-0 end-0 mt-3 me-3 ">Science</span>
+                                </div>
+                                <div class="card-body p-4">
+                                    <p class="card-subtitle text-secondary " style="font-size: 12px;">Jan 21,2017 <span
+                                            class="ms-3">33 Comments</span></p>
+                                    <h4 class="card-title my-3">Standard post with a single image</h4>
+                                    <p class="text-secondary">Curabitur pulvinar euismod ante, ac sagittis ante posuere ac.
+                                        Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra
+                                        laoreet.</p>
+                                    <button type="button" class="bg-transparent border-0 text-uppercase">read more <i
+                                            class="fa-solid fa-arrow-right ms-1"></i></button>
+                                </div>
                             </div>
-                            <div class="card-body p-4">
-                                <p class="card-subtitle text-secondary " style="font-size: 12px;">Jan 21,2017 <span
-                                        class="ms-3">33 Comments</span></p>
-                                <h4 class="card-title my-3">Standard post with a single image</h4>
-                                <p class="text-secondary">Curabitur pulvinar euismod ante, ac sagittis ante posuere ac.
-                                    Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra
-                                    laoreet.</p>
-                                <button type="button" class="bg-transparent border-0 text-uppercase">read more <i
-                                        class="fa-solid fa-arrow-right ms-1"></i></button>
+                        </div>
+                        <div class="col-12 col-12 col-12 col-lg-4">
+                            <div class="card mb-4">
+                                <div class="card-header p-0 position-relative">
+                                    <img src="./images/blog-3.png" alt="blog-3" class="img-fluid d-block w-100">
+                                    <span class="btn btn-primary position-absolute top-0 end-0 mt-3 me-3 ">Science</span>
+                                </div>
+                                <div class="card-body p-4">
+                                    <p class="card-subtitle text-secondary " style="font-size: 12px;">Jan 21,2017 <span
+                                            class="ms-3">33 Comments</span></p>
+                                    <h4 class="card-title my-3">Standard post with a single image</h4>
+                                    <p class="text-secondary">Curabitur pulvinar euismod ante, ac sagittis ante posuere ac.
+                                        Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra
+                                        laoreet.</p>
+                                    <button type="button" class="bg-transparent border-0 text-uppercase">read more <i
+                                            class="fa-solid fa-arrow-right ms-1"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -664,15 +730,15 @@
         <!--::::: Clients Section Ends :::::-->
 
         <div class="divider"></div>
-        
+
         <!--::::: Team Section Starts :::::-->
         <section class="team">
             <div class="container">
-                <div class="team-header my-5">
+                <div class="team-header">
                     <h2 class="display-4 text-center fw-light text-uppercase">meet our team</h2>
                     <p class="fw-light text-center">Lorem ipsum dolor sit amet, consecte adipiscing elit.</p>
                 </div>
-                <div class="team-body">
+                <div class="team-body my-5">
                     <div class="row">
                         <div class="col-12 col-lg-3 mb-5">
                             <div class="card rounded border-0">
@@ -682,24 +748,28 @@
                                     <p class="text-secondary">Software Developer</p>
                                     <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing tristique hendrerit laoreet.</p>
                                     <ul class="nav justify-content-center">
-                                        <li class="nav-item me-3">
-                                            <a href="" class="nav-link p-2 border border-1 border-secondary d-flex justify-content-center align-items-center rounded-circle" style="width: 30px; height: 30px;">
+                                        <li class="nav-item border border-1 border-secondary rounded-pill overflow-hidden me-3" style="width: 50px; height: 50px;">
+                                            <a href="" class="nav-link">
                                                 <i class="fa-brands fa-facebook-f text-dark" style="font-size: 12px;"></i>
+                                                <span class="text-dark" style="font-size: 12px;">Facebook</span>
                                             </a>
                                         </li>
-                                        <li class="nav-item me-3">
-                                            <a href="" class="nav-link p-2 border border-1 border-secondary d-flex justify-content-center align-items-center rounded-circle" style="width: 30px; height: 30px;">
+                                        <li class="nav-item border border-1 border-secondary rounded-pill overflow-hidden me-3" style="width: 50px; height: 50px;">
+                                            <a href="" class="nav-link">
                                                 <i class="fa-brands fa-x-twitter text-dark" style="font-size: 12px;"></i>
+                                                <span class="text-dark" style="font-size: 12px;">Twitter</span>
                                             </a>
                                         </li>
-                                        <li class="nav-item me-3">
-                                            <a href="" class="nav-link p-2 border border-1 border-secondary d-flex justify-content-center align-items-center rounded-circle" style="width: 30px; height: 30px;">
+                                        <li class="nav-item border border-1 border-secondary rounded-pill overflow-hidden me-3" style="width: 50px; height: 50px;">
+                                            <a href="" class="nav-link">
                                                 <i class="fa-brands fa-instagram text-dark" style="font-size: 12px;"></i>
+                                                <span class="text-dark" style="font-size: 12px;">Instagram</span>
                                             </a>
                                         </li>
-                                        <li class="nav-item me-3">
-                                            <a href="" class="nav-link p-2 border border-1 border-secondary d-flex justify-content-center align-items-center rounded-circle" style="width: 30px; height: 30px;">
+                                        <li class="nav-item border border-1 border-secondary rounded-pill overflow-hidden me-3" style="width: 50px; height: 50px;">
+                                            <a href="" class="nav-link">
                                                 <i class="fa-solid fa-envelope text-dark" style="font-size: 12px;"></i>
+                                                <span class="text-dark" style="font-size: 12px;">Mail</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -714,24 +784,28 @@
                                     <p class="text-secondary">Software Developer</p>
                                     <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing tristique hendrerit laoreet.</p>
                                     <ul class="nav justify-content-center">
-                                        <li class="nav-item me-3">
-                                            <a href="" class="nav-link p-2 border border-1 border-secondary d-flex justify-content-center align-items-center rounded-circle" style="width: 30px; height: 30px;">
+                                        <li class="nav-item border border-1 border-secondary rounded-pill overflow-hidden me-3" style="width: 50px; height: 50px;">
+                                            <a href="" class="nav-link">
                                                 <i class="fa-brands fa-facebook-f text-dark" style="font-size: 12px;"></i>
+                                                <span class="text-dark" style="font-size: 12px;">Facebook</span>
                                             </a>
                                         </li>
-                                        <li class="nav-item me-3">
-                                            <a href="" class="nav-link p-2 border border-1 border-secondary d-flex justify-content-center align-items-center rounded-circle" style="width: 30px; height: 30px;">
+                                        <li class="nav-item border border-1 border-secondary rounded-pill overflow-hidden me-3" style="width: 50px; height: 50px;">
+                                            <a href="" class="nav-link">
                                                 <i class="fa-brands fa-x-twitter text-dark" style="font-size: 12px;"></i>
+                                                <span class="text-dark" style="font-size: 12px;">Twitter</span>
                                             </a>
                                         </li>
-                                        <li class="nav-item me-3">
-                                            <a href="" class="nav-link p-2 border border-1 border-secondary d-flex justify-content-center align-items-center rounded-circle" style="width: 30px; height: 30px;">
+                                        <li class="nav-item border border-1 border-secondary rounded-pill overflow-hidden me-3" style="width: 50px; height: 50px;">
+                                            <a href="" class="nav-link">
                                                 <i class="fa-brands fa-instagram text-dark" style="font-size: 12px;"></i>
+                                                <span class="text-dark" style="font-size: 12px;">Instagram</span>
                                             </a>
                                         </li>
-                                        <li class="nav-item me-3">
-                                            <a href="" class="nav-link p-2 border border-1 border-secondary d-flex justify-content-center align-items-center rounded-circle" style="width: 30px; height: 30px;">
+                                        <li class="nav-item border border-1 border-secondary rounded-pill overflow-hidden me-3" style="width: 50px; height: 50px;">
+                                            <a href="" class="nav-link">
                                                 <i class="fa-solid fa-envelope text-dark" style="font-size: 12px;"></i>
+                                                <span class="text-dark" style="font-size: 12px;">Mail</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -745,25 +819,29 @@
                                     <h3 class="">Emma Ross</h3>
                                     <p class="text-secondary">Software Developer</p>
                                     <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing tristique hendrerit laoreet.</p>
-                                    <ul class="nav justify-content-center">
-                                        <li class="nav-item me-3">
-                                            <a href="" class="nav-link p-2 border border-1 border-secondary d-flex justify-content-center align-items-center rounded-circle" style="width: 30px; height: 30px;">
+                                   <ul class="nav justify-content-center">
+                                        <li class="nav-item border border-1 border-secondary rounded-pill overflow-hidden me-3" style="width: 50px; height: 50px;">
+                                            <a href="" class="nav-link">
                                                 <i class="fa-brands fa-facebook-f text-dark" style="font-size: 12px;"></i>
+                                                <span class="text-dark" style="font-size: 12px;">Facebook</span>
                                             </a>
                                         </li>
-                                        <li class="nav-item me-3">
-                                            <a href="" class="nav-link p-2 border border-1 border-secondary d-flex justify-content-center align-items-center rounded-circle" style="width: 30px; height: 30px;">
+                                        <li class="nav-item border border-1 border-secondary rounded-pill overflow-hidden me-3" style="width: 50px; height: 50px;">
+                                            <a href="" class="nav-link">
                                                 <i class="fa-brands fa-x-twitter text-dark" style="font-size: 12px;"></i>
+                                                <span class="text-dark" style="font-size: 12px;">Twitter</span>
                                             </a>
                                         </li>
-                                        <li class="nav-item me-3">
-                                            <a href="" class="nav-link p-2 border border-1 border-secondary d-flex justify-content-center align-items-center rounded-circle" style="width: 30px; height: 30px;">
+                                        <li class="nav-item border border-1 border-secondary rounded-pill overflow-hidden me-3" style="width: 50px; height: 50px;">
+                                            <a href="" class="nav-link">
                                                 <i class="fa-brands fa-instagram text-dark" style="font-size: 12px;"></i>
+                                                <span class="text-dark" style="font-size: 12px;">Instagram</span>
                                             </a>
                                         </li>
-                                        <li class="nav-item me-3">
-                                            <a href="" class="nav-link p-2 border border-1 border-secondary d-flex justify-content-center align-items-center rounded-circle" style="width: 30px; height: 30px;">
+                                        <li class="nav-item border border-1 border-secondary rounded-pill overflow-hidden me-3" style="width: 50px; height: 50px;">
+                                            <a href="" class="nav-link">
                                                 <i class="fa-solid fa-envelope text-dark" style="font-size: 12px;"></i>
+                                                <span class="text-dark" style="font-size: 12px;">Mail</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -771,31 +849,35 @@
                             </div>
                         </div>
                         <div class="col-12 col-lg-3 mb-5">
-                            <div class="card rounded border-0">
+                            <div class="card rounded-4 border-0">
                                 <img src="./images/team-image-4.png" alt="team-image-4" class="img-fluid d-block w-100">
                                 <div class="card-body text-center">
                                     <h3 class="">Victor Ladia</h3>
                                     <p class="text-secondary">Software Developer</p>
                                     <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing tristique hendrerit laoreet.</p>
                                     <ul class="nav justify-content-center">
-                                        <li class="nav-item me-3">
-                                            <a href="" class="nav-link p-2 border border-1 border-secondary d-flex justify-content-center align-items-center rounded-circle" style="width: 30px; height: 30px;">
+                                        <li class="nav-item border border-1 border-secondary rounded-pill overflow-hidden me-3" style="width: 50px; height: 50px;">
+                                            <a href="" class="nav-link">
                                                 <i class="fa-brands fa-facebook-f text-dark" style="font-size: 12px;"></i>
+                                                <span class="text-dark" style="font-size: 12px;">Facebook</span>
                                             </a>
                                         </li>
-                                        <li class="nav-item me-3">
-                                            <a href="" class="nav-link p-2 border border-1 border-secondary d-flex justify-content-center align-items-center rounded-circle" style="width: 30px; height: 30px;">
+                                        <li class="nav-item border border-1 border-secondary rounded-pill overflow-hidden me-3" style="width: 50px; height: 50px;">
+                                            <a href="" class="nav-link">
                                                 <i class="fa-brands fa-x-twitter text-dark" style="font-size: 12px;"></i>
+                                                <span class="text-dark" style="font-size: 12px;">Twitter</span>
                                             </a>
                                         </li>
-                                        <li class="nav-item me-3">
-                                            <a href="" class="nav-link p-2 border border-1 border-secondary d-flex justify-content-center align-items-center rounded-circle" style="width: 30px; height: 30px;">
+                                        <li class="nav-item border border-1 border-secondary rounded-pill overflow-hidden me-3" style="width: 50px; height: 50px;">
+                                            <a href="" class="nav-link">
                                                 <i class="fa-brands fa-instagram text-dark" style="font-size: 12px;"></i>
+                                                <span class="text-dark" style="font-size: 12px;">Instagram</span>
                                             </a>
                                         </li>
-                                        <li class="nav-item me-3">
-                                            <a href="" class="nav-link p-2 border border-1 border-secondary d-flex justify-content-center align-items-center rounded-circle" style="width: 30px; height: 30px;">
+                                        <li class="nav-item border border-1 border-secondary rounded-pill overflow-hidden me-3" style="width: 50px; height: 50px;">
+                                            <a href="" class="nav-link">
                                                 <i class="fa-solid fa-envelope text-dark" style="font-size: 12px;"></i>
+                                                <span class="text-dark" style="font-size: 12px;">Mail</span>
                                             </a>
                                         </li>
                                     </ul>
